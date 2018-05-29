@@ -4,39 +4,16 @@
 
 ## 路由列表
 
- server
-  |
-  + - /
-  |
-  + - /article
-  |
-  + - /admin
-       |
-       + - /admin_homepage
-       |
-       + - /admin_article
-       |
-       + - /admin_user
+https://github.com/SURA907/node_blog/master/router_list.png
 
 ## 文件目录
- /
- |
- + - server.js      入口文件
- |
- + - package.json   模块依赖
- |
- + - test.sql       数据库备份文件(表结构+测试数据)
- |
- + - router/        存放路由模块
- |
- + - www/           公共资源(js、css、图片等)
- |
- + - template/      存放ejs引擎模板
+
+https://github.com/SURA907/node_blog/master/file_tree.png
 
 ## 部署运行
- cd 根目录
- npm install        下载依赖
- node server.js     启动服务器
+ cd 根目录<br>
+ npm install        下载依赖<br>
+ node server.js     启动服务器<br>
 
  ### 另可在 http://sura.wang 访问示例
 
@@ -50,8 +27,7 @@
  ### 管理员
  用户名 ：SURA     密码 ：asdf
  ### 普通用户
- 用户名 ：ASURA    密码 ：asura
+ 用户名 ：ASURA    密码 ：asura<br>
  用户名 ：K907     密码 ：k8806
 
-## 注：请在示例网站中操作时不要删除以上用户
-    ## 且不要过多的删除文章数据
+## 注：请在示例网站中操作时不要删除以上用户，且不要过多的删除文章数据
