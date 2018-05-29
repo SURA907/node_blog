@@ -8,7 +8,7 @@
 ![image](https://github.com/SURA907/node_blog/raw/master/file_tree.png)<br>
 ## 三、部署运行
  cd 根目录<br>
- 下载依赖&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;npm install<br>
+ 下载依赖&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;npm install<br>
  启动服务器&nbsp;&nbsp;node server.js<br>
 
  #### 另可在 http://sura.wang 访问示例
