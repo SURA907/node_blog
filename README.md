@@ -8,8 +8,8 @@
 ![image](https://github.com/SURA907/node_blog/raw/master/file_tree.png)<br>
 ## 三、部署运行
  cd 根目录<br>
- npm install        下载依赖<br>
- node server.js     启动服务器<br>
+ 下载依赖&nbsp;&nbsp;&nbsp;&nbsp;npm install<br>
+ 启动服务器&nbsp;&nbsp;node server.js<br>
 
  #### 另可在 http://sura.wang 访问示例
 
@@ -24,6 +24,6 @@
  用户名 ：SURA&nbsp;&nbsp;&nbsp;&nbsp;密码 ：asdf
  #### 普通用户
  用户名 ：ASURA&nbsp;&nbsp;&nbsp;&nbsp;密码 ：asura<br>
- 用户名 ：K907&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;密码 ：k8806
+ 用户名 ：K907&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;密码 ：k8806
 
 ### 注：请在示例网站中操作时不要删除以上用户，且不要过多的删除文章数据
