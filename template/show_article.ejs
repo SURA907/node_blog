@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>show_article</title>
+    <link rel="stylesheet" href="/css/clearStyle.css">
+    <link rel="stylesheet" href="/css/index_style.css">
+    <link rel="stylesheet" href="/css/article_page.css">
+</head>
+<body>
+<div class="title-page">
+    <img src="/images/titlePage.jpg">
+    <div class="home-title">
+        <a href="#">SURA's blog</a>
+    </div>
+</div>
+<div class="container_article">
+    <img class="top-img" src="/images/topImg.png" alt="">
+    <div class="text-box">
+        <h1 class="title"><%=article.article_title%></h1>
+        <div class="massage">
+            <%=article.date%>/<%=author.username%>
+        </div>
+        <div class="text"><%-article.article_body%></div>
+    </div>
+    <img class="bottom-img" src="/images/bottomImg.png" alt="">
+</div>
+</body>
+</html>
