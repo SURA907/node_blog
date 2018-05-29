@@ -4,11 +4,11 @@
 
 ## 一、路由列表
 
-https://github.com/SURA907/node_blog/raw/master/router_list.png
+https://github.com/SURA907/node_blog/blob/master/router_list.png
 
 ## 二、文件目录
 
-https://github.com/SURA907/node_blog/raw/master/file_tree.png
+https://github.com/SURA907/node_blog/blob/master/file_tree.png
 
 ## 三、部署运行
  cd 根目录<br>
