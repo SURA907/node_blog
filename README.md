@@ -3,13 +3,9 @@
 一个使用node，基于express框架，使用ejs引擎的小型博客站程序
 
 ## 一、路由列表
-
-(https://github.com/SURA907/node_blog/raw/master/router_list.png)
-
+![image](https://github.com/SURA907/node_blog/raw/master/router_list.png)<br>
 ## 二、文件目录
-
-https://github.com/SURA907/node_blog/raw/master/file_tree.png
-
+![image](https://github.com/SURA907/node_blog/raw/master/file_tree.png)<br>
 ## 三、部署运行
  cd 根目录<br>
  npm install        下载依赖<br>
