@@ -16,6 +16,7 @@
  切换到程序根目录&nbsp;=>&nbsp;cd 根目录<br>
  下载依赖&nbsp;=>&nbsp;npm install<br>
  启动服务器&nbsp;=>&nbsp;node server.js<br>
+ 查看运行效果&nbsp;=>&nbsp;打开浏览器，输入http://localhost:8080
 
  #### 另可在 http://sura.wang 访问示例
 
