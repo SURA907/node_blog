@@ -50,3 +50,84 @@ div{
     text-indent: 2em;
     line-height: 1.25em;
 }
+
+.comment{
+    width: 80%;
+    margin: 3rem auto;
+}
+
+.comment h4{
+    display: block;
+    font: bold 3rem '宋体',Consolas;
+    padding: 3rem 0;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+.add-comment{
+    margin-top: 0.8rem;
+    background-color: #ffffff;
+    padding: 2rem;
+}
+
+.add-comment textarea{
+    width: 100%;
+    margin-top: 10px;
+}
+
+.comment-body{
+    background-color: #ffffff;
+    margin-top: 10px;
+    padding: 2rem;
+    position: relative;
+}
+
+.user-avatar-img{
+    display: inline-block;
+}
+
+.user-avatar-img img{
+    display: inline-block;
+    width: 2.5rem;
+}
+
+.comment-message{
+    display: inline-block;
+    margin-left: 15px;
+    position: absolute;
+    top: 2em;
+    line-height: 1.2em;
+}
+
+.comment-body .username{
+    font: bold 1.2em '微软雅黑',Consolas;
+}
+
+.comment-body .upload-time{
+    font: 0.8em '微软雅黑',Consolas;
+    color: #0b32c4;
+}
+
+.comment-body p{
+    font: 1em '微软雅黑',Consolas;
+    margin-top: 15px;
+}
+
+#add_comment{
+    font: 1em '微软雅黑',Consolas;
+}
+
+#btn_submit_comment{
+    font: 1em '微软雅黑',Consolas;
+    padding: 0.8em 4.5em;
+    margin-top: 1.5em;
+    background-color: #0b32c4;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.5s;
+}
+
+#btn_submit_comment:hover{
+    background-color: #1c1c1c;
+}

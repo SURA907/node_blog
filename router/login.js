@@ -7,7 +7,9 @@ const sha256 = require("./sha256");
 
 module.exports = function (db) {
     var router = express.Router();
-    
+
+    //链式操作
+    //确认用户是否登陆
     router.use((request, response, next)=>{
         if (!request.session['user_id'] && request.url!=='/login') {
             response.redirect('/admin/login');
@@ -16,11 +18,13 @@ module.exports = function (db) {
         }
     });
 
+    //渲染登陆页面
     router.get('/login', (request, response)=>{
         response.render('1_login.ejs',{});
         response.end();
     });
 
+    //处理登陆信息
     router.post('/login',(request, response)=>{
         const username = request.body.username;
         const password = sha256.update(request.body.password);

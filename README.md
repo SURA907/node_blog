@@ -2,14 +2,20 @@
 
 一个使用node，基于express框架，使用ejs引擎的小型博客站程序
 
+## 零、更新日志
+
+### 2018-06-01
+增加了评论功能<br>
+数据库表结构也相应的改变
+
 ## 一、路由列表
 ![image](https://github.com/SURA907/node_blog/raw/master/router_list.png)<br>
 ## 二、文件目录
 ![image](https://github.com/SURA907/node_blog/raw/master/file_tree.png)<br>
 ## 三、部署运行
- cd 根目录<br>
- 下载依赖&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;npm install<br>
- 启动服务器&nbsp;&nbsp;node server.js<br>
+ 切换到程序根目录&nbsp;=>&nbsp;cd 根目录<br>
+ 下载依赖&nbsp;=>&nbsp;npm install<br>
+ 启动服务器&nbsp;=>&nbsp;node server.js<br>
 
  #### 另可在 http://sura.wang 访问示例
 
