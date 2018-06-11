@@ -10,10 +10,9 @@ module.exports = function (db) {
 
     // 从数据库获取文章信息
     router.get('/', (request, response, next)=>{
-        db.query('select article_id,article_title,date_format(upload_time,"%Y-%m-%d") date,article_body from article_table', (err, data)=>{
+        db.query('select article_id,article_title,LEFT(article_body,30) article_body,date_format(upload_time,"%Y-%m-%d") date,username author from article_table,user_table where user_table.user_id = article_table.author', (err, data)=>{
             if (!err) {
-                response.article_summary = data;
-
+                request.article_summary = data;
                 //链式操作
                 next();
             } else {
@@ -22,24 +21,10 @@ module.exports = function (db) {
         });
     });
 
-    // 通过数据库获取作者名
-    router.get('/', (request, response, next)=>{
-        db.query('select user_table.username author from user_table,article_table where user_table.user_id = article_table.author',(err, data)=>{
-            if (!err) {
-                response.username = data;
-
-                //链式操作
-                next();
-            } else {
-                response.status(500).send('server is error').end();
-            }
-        })
-    });
-
+    //渲染首页
     router.get('/', (request, response)=>{
         response.render('index.ejs',{
-            article_summary:response.article_summary,
-            username:response.username
+            article_summary:request.article_summary,
         });
         response.end();
     });
