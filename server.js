@@ -10,9 +10,9 @@ const consolidate = require("consolidate");
 const db = mysql.createPool({
     host:'176.122.183.16',
     port:3306,
-    user:'test',
-    password:'test',
-    database:'test'
+    user:'sura',
+    password:'sura',
+    database:'sura'
 });
 
 // -创建服务，启动端口监听
