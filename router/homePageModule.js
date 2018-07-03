@@ -8,9 +8,10 @@ const express = require("express");
 module.exports = function (db) {
     var router = express.Router();
 
+    // 链式操作
     // 从数据库获取文章信息
     router.get('/', (request, response, next)=>{
-        db.query('select article_id,article_title,LEFT(article_body,30) article_body,date_format(upload_time,"%Y-%m-%d") date,username author from article_table,user_table where user_table.user_id = article_table.author', (err, data)=>{
+        db.query('select article_id,article_title,LEFT(article_body,30) article_body,date_format(upload_time,"%Y-%m-%d") date,username author from article_table,user_table where user_table.user_id = article_table.author order by upload_time', (err, data)=>{
             if (!err) {
                 request.article_summary = data;
                 //链式操作
