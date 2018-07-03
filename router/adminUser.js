@@ -46,6 +46,7 @@ module.exports = function (db) {
     });
 
     //处理注册用户的请求
+    // -同时检测用户权限
     router.get('/add_user',(request, response)=>{
         if (request.user_status[0].is_admin === 'YES') {
             response.render('2_registered.ejs', {});
@@ -60,7 +61,6 @@ module.exports = function (db) {
     router.post('/add_user', (request, response, next)=>{
         db.query("select count(*) count from user_table where username = '"+request.body.username+"'", (err, data)=>{
             if (!err) {
-
                 //判断用户名是否已存在
                 if (data[0].count === 0) {
                     next();

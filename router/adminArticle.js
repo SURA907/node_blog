@@ -25,7 +25,7 @@ module.exports = function (db) {
     //获取文章相关信息
     //所有文章信息，供管理员使用
     router.use((request, response, next)=>{
-        db.query('select article_id,username author,article_title,date_format(upload_time,"%Y-%m-%d") upload_time from article_table,user_table where article_table.author = user_table.user_id',(err,data)=>{
+        db.query('select article_id,username author,article_title,date_format(upload_time,"%Y-%m-%d") upload_time from article_table,user_table where article_table.author = user_table.user_id order by upload_time',(err,data)=>{
             if (!err) {
                 request.admin_article_massage = data;
                 next();
@@ -40,7 +40,7 @@ module.exports = function (db) {
     //供非管理员使用
     router.use((request, response, next)=>{
         var user_id = request.session['user_id'];
-        db.query('select article_id,username author,article_title,date_format(upload_time,"%Y-%m-%d") upload_time from article_table,user_table where article_table.author = user_table.user_id and author = '+user_id, (err, data)=>{
+        db.query(`select article_id,username author,article_title,date_format(upload_time,"%Y-%m-%d") upload_time from article_table,user_table where article_table.author = user_table.user_id and author = `+user_id+` order by upload_time`, (err, data)=>{
             if (!err) {
                 request.article_massage = data;
                 next();
