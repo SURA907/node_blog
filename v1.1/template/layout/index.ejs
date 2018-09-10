@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>home</title>
+    <link rel="stylesheet" href="css/clear_style.css">
+    <link rel="stylesheet" href="css/index_article_style.css">
+    <script src="/js/ajax.js"></script>
+    <script src="/js/logout.js"></script>
+</head>
+<body>
+<% include ../public_banner.ejs %>
+<div class="content">
+        <a href="#" id="title">
+            <h1>SURA's Blog</h1>
+        </a>
+        <img class="home-img" src="img/index.jpg" alt="图床失效">
+        <ul class="article-content" id="article-content">
+            <% for(var n=0; n<article_data.length; n++) {%>
+            <li class="article-items">
+                <a href="/article?article_id=<%=article_data[n].article_id%>" class="article-title">
+                <h2><%= article_data[n].article_title %></h2>
+                </a>
+            <div class="article-status">
+                <span class="upload-time"><img src="img/upload-time.png" alt=""><%= article_data[n].upload_time%></span>
+                <span class="author"><img src="img/author.png" alt=""><%= article_data[n].author%></span>
+                <span class="theme"><img src="img/theme.png" alt="">无主题</span>
+            </div>
+            <div class="article-body"><%= article_data[n].article_body%></div>
+        </li>
+        <% } %>
+    </ul>
+</div>
+<div class="fix-float"></div>
+<script>
+    //设置站点标题(SURA's Blog)平移效果
+    var title = document.getElementById('title');
+    var left = 55;
+    var timer = setInterval(function () {
+        if (left > 43) {
+            title.style.left = left + '%';
+            left -= 0.5;
+        } else {
+            clearInterval(timer);
+        }
+    },15)
+</script>
+</body>
+</html>

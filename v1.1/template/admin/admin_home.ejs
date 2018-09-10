@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>admin_home</title>
+    <link rel="stylesheet" href="/css/clear_style.css">
+    <link rel="stylesheet" href="/css/index_article_style.css">
+    <link rel="stylesheet" href="/css/admin_page.css">
+    <script src="/js/ajax.js"></script>
+    <script src="/js/logout.js"></script>
+</head>
+<body>
+<% include ../public_banner.ejs %>
+<div class="content">
+    <div class="btn-home">
+        <ul>
+            <% if (user_status.is_admin === 'YES') { %>
+                <li class="items-title">操作-admin</li>
+                <li class="admin-content">
+                    <span>--add</span>
+                    <a href="/admin/admin_article/add_article">添加文章</a>
+                    <a href="/admin/admin_user/add_user">添加用户</a>
+                </li>
+            <% } else { %>
+                <li class="items-title">操作-ordinary</li>
+                <li class="admin-content">
+                    <span>--add</span>
+                    <a href="/admin/admin_article/add_article">添加文章</a>
+                </li>
+            <% } %>
+            <hr>
+        </ul>
+    </div>
+    <div class="admin-items">
+        <ul>
+            <% if (user_status.is_admin === 'YES') { %>
+                <li class="items-title">文章管理-admin(all articles)</li>
+            <% } else { %>
+                <li class="items-title">文章管理-ordinary(only self)</li>
+            <% } %>
+            <% for (var n=0; n<article_data.length; n++) {%>
+                <li class="admin-content">
+                    <div class="article-title-home">
+                        <span class="serial">#<%= n+1 %></span>
+                        <span class="article-title"><%= article_data[n].article_title %></span>
+                    </div>
+                    <div class="article-message">
+                        <img src="/img/author.png" alt="">
+                        <span class="author"><%= article_data[n].author %></span>
+                        <img src="/img/upload-time.png" alt="">
+                        <span class="upload-time"><%= article_data[n].upload_time %></span>
+                    </div>
+                    <div class="operating">
+                        <a href="#" class="btn-operating-delete" name='{"path": "/admin/admin_article/delete_article", "article_id": <%= article_data[n].article_id %>}' ><img src="/img/delete_ico.png" >删除</a>
+                        <a href="/admin/admin_article/update_article?article_id=<%= article_data[n].article_id %>" class="btn-operating-update" ><img src="/img/edit_ico.png" >编辑</a>
+                    </div>
+                </li>
+                <hr>
+            <% } %>
+        </ul>
+    </div>
+    <ul class="admin-items">
+        <% if (user_status.is_admin === 'YES') { %>
+            <li class="items-title">用户管理-admin</li>
+            <% for (var n=0; n<user_message_general.length; n++) { %>
+                <li class="admin-content">
+                    <div class="article-title-home">
+                        <span class="serial">#<%= n+1 %></span>
+                        <span class="article-title"><%= user_message_general[n].username%></span>
+                    </div>
+                    <div class="operating">
+                        <a href="#" class="btn-operating-delete" name='{"path": "/admin/admin_user/delete_user", "user_id": <%= user_message_general[n].user_id%>}'><img src="/img/delete_ico.png" >删除</a>
+                        <a href="/admin/admin_user/update_user?user_id=<%= user_message_general[n].user_id%>" class="btn-operating-update"><img src="/img/edit_ico.png" >编辑</a>
+                    </div>
+                </li>
+                <hr>
+            <% } %>
+        <% } else { %>
+            <li class="items-title">用户管理-ordinary(no permission)</li>
+        <% } %>
+    </ul>
+</div>
+<div class="fix-float"></div>
+<script>
+    var btn_operating_delete = document.getElementsByClassName('btn-operating-delete');
+    for (let n=0; n<btn_operating_delete.length; n++) {
+        btn_operating_delete[n].onclick = function() {
+            if (confirm('确认删除？\n会一并删除所有关联信息（文章、评论等）')) {
+                let the_args = JSON.parse(btn_operating_delete[n].name);
+                send_message(the_args.path, the_args)
+            }
+            return false;
+        }
+    }
+    function send_message(path, data) {
+        ajax({
+            url: path,
+            type: 'post',
+            data: data,
+            success: function(str) {
+                let the_str = JSON.parse(str);
+                if (the_str.ok) {
+                    location.reload()
+                } else {
+                    alert('err：'+the_str.message)
+                }
+            },
+            error: function() {
+                alert('通信失败')
+            }
+        })
+    }
+</script>
+</body>
+</html>

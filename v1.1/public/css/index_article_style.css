@@ -1,0 +1,157 @@
+body{
+    position: relative;
+}
+
+.banner{
+    width: 20%;
+    height: 100%;
+    background-color: #bbffaa;
+    position: fixed;
+    font-size: 18px;
+}
+
+.logo{
+    background-color: #f4f4f4;
+    margin-bottom: 30px;
+    padding: 30px 0;
+}
+
+.logo img{
+    width: 70%;
+    margin: 0 auto;
+    display: block;
+}
+
+.banner-item a{
+    width: 100%;
+    display: block;
+    font-size: 18px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    background-color: #bbffaa;
+}
+
+.banner-item a:hover{
+    background-color: #f4f4f4;
+}
+
+.banner-item li{
+    width: 100%;
+    text-align: center;
+    padding: 7px 0;
+}
+
+.login-status{
+    margin: 82px 0 0 0;
+    text-align: center;
+}
+
+.login-status a{
+    font-size: 17px;
+    background-color: #f4f4f4;
+}
+
+.login-status a:visited{
+    background-color: #f4f4f4;
+}
+
+.login-status a:link{
+    background-color: #f4f4f4;
+}
+
+.login-status a:active{
+    background-color: #f4f4f4;
+}
+
+.content{
+    width: 80%;
+    float: right;
+    background-color: #aaee99;
+    position: relative;
+}
+
+.fix-float{
+    clear: right;
+}
+
+#title{
+    font-size: 52px;
+    position: absolute;
+    top: 135px;
+    left: 55%;
+    color: #d7deff;
+    text-decoration: none;
+}
+
+.home-img{
+    width: 100%;
+    display: inline-block;
+}
+
+.article-items{
+    margin: 12px;
+    padding: 15px;
+    border-radius: 12px;
+    background-color: #ffffff;
+}
+
+.article-title{
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #000000;
+    display: block;
+}
+
+.article-status{
+    height: 0.8em;
+    margin: 6px 0;
+    font-size: 14px;
+}
+
+.upload-time,.author{
+    color: #1e2e85;
+}
+
+.upload-time img{
+    height: 100%;
+    display: inline-block;
+    margin: 0 2px;
+}
+
+.author img{
+    height: 100%;
+    display: inline-block;
+    margin: 0 2px 0 7px;
+}
+
+.theme img{
+    height: 100%;
+    display: inline-block;
+    margin: 0 2px 0 7px;
+}
+
+.article-body{
+    font-size: 18px;
+    color: #999999;
+    line-height: 1.4em;
+}
+
+.user-avatar{
+    font-size: 24px;
+    width: 48px;
+    display: inline-block;
+}
+
+#btn-logout{
+    width: 100%;
+    padding: 5px 0;
+    display: inline-block;
+    text-decoration: none;
+    background-color: #bbffaa;
+    transition: background-color 0.3s;
+}
+
+#btn-logout:hover{
+    background-color: #f4f4f4;
+}

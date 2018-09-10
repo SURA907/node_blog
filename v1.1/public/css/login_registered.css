@@ -1,0 +1,103 @@
+body{
+    background-color: #f4f4f4;
+}
+
+.login-title{
+    font-size: 42px;
+    color: #000;
+    float: left;
+    margin: 36px 0 0 24px;
+}
+
+.login-title a{
+    text-decoration: none;
+}
+
+.login-content{
+    width: 30%;
+    height: 400px;
+    background-color: #ffffff;
+    margin: 0 auto;
+    position: relative;
+    top: 90px;
+    text-align: center;
+}
+
+.top-btn{
+    font-size: 16px;
+    font-weight: 700;
+    padding: 30px;
+}
+
+#btn-login{
+    padding: 10px;
+    text-decoration: none;
+    color: #ea6f5a;
+    border-bottom: 2px solid #ea6f5a;
+}
+
+#btn-registered{
+    padding: 10px;
+    color: #969696;
+    text-decoration: none;
+    transition: border-bottom 0.2s;
+}
+
+#btn-registered:hover{
+    border-bottom: 2px solid #ea6f5a;
+}
+
+.input-home{
+    padding: 75px 40px 40px 40px;
+    position: relative;
+}
+
+#input-username{
+    width: 86%;
+    height: 40px;
+    font-size: 14px;
+    background-color: #f7f7f7;
+    border-radius: 4px 4px 0 0;
+    padding: 0 8px 0 12%;
+}
+
+#input-password{
+    width: 86%;
+    height: 40px;
+    font-size: 14px;
+    background-color: #f7f7f7;
+    border-radius: 4px 4px 0 0;
+    padding: 0 8px 0 12%;
+}
+
+.user-ico{
+    display: inline-block;
+    width: 1.4em;
+    position: absolute;
+    top: 86px;
+    left: 49px;
+}
+
+.lock-ico{
+    display: inline-block;
+    width: 1.4em;
+    position: absolute;
+    top: 131px;
+    left: 49px;
+}
+
+#btn-submit{
+    width: 96px;
+    height: 38px;
+    margin-left: 76px;
+    cursor: pointer;
+    border-style: none;
+    outline: none;
+    border-radius: 12px;
+    background-color: #e8e7e3;
+    transition: background-color 0.3s;
+}
+
+#btn-submit:hover{
+    background-color: #f4f4f4;
+}

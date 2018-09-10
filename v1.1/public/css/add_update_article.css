@@ -1,0 +1,76 @@
+.content{
+    background-color: #bbffaa;
+    text-align: center;
+}
+
+.add-article-content{
+    display: inline-block;
+    width: 92%;
+    min-height: 500px;
+    margin: 24px 0;
+    background-color: #f4f4f4;
+    padding: 12px;
+    position: relative;
+}
+
+#article-title{
+    display: inline-block;
+    width: 76%;
+    height: 2em;
+    font-size: 16px;
+    margin: 24px 136px 0 0;
+    padding: 3px 12px;
+    background-color: #f7f7f7;
+    border-style: none;
+    border-bottom: thin solid #42c02e;
+}
+
+#article-title:focus{
+    outline: none;
+}
+
+#article-body{
+    display: inline-block;
+    width: 76%;
+    min-height: 25em;
+    font-size: 16px;
+    margin: 24px 136px 24px 0;
+    padding: 12px;
+    resize: none;
+}
+
+.submit-home{
+    display: inline-block;
+    width: 130px;
+    height: 150px;
+    position: fixed;
+    top: 185px;
+    left: 85.5%;
+}
+
+.radio-items{
+    font-size: 0.8em;
+    margin: 24px 0 0 0;
+    color: #42c02e;
+}
+
+.theme{
+    padding: 12px 0;
+    margin: 0 0 18px 0;
+    background-color: #bbffaa;
+}
+
+#btn-submit{
+    background-color: #42c02e;
+    cursor: pointer;
+    color: #ffffff;
+    padding: 5px 24px;
+    border-radius: 17px;
+    transition: background-color,color 0.3s;
+    border-style: none;
+}
+
+#btn-submit:hover{
+    background-color: #f4f4f4;
+    color: #1c1c1c;
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加-SURA</title>
+    <link rel="stylesheet" href="/css/clear_style.css">
+    <link rel="stylesheet" href="/css/login_registered.css">
+    <link rel="stylesheet" href="/css/add_user.css">
+    <script src="/js/ajax.js"></script>
+    <script src="/js/logout.js"></script>
+</head>
+<body>
+<div class="login-title">
+    <a href="../../">
+        <h1>SURA</h1>
+    </a>
+</div>
+<div class="login-content">
+    <div class="top-btn">
+        <a href="#" id="btn-registered">注册</a>
+    </div>
+    <div class="input-home">
+        <img src="/img/user-ico.png" class="user-ico" alt="">
+        <input placeholder="用户名（不区分大小写）" type="text" name="username" id="input-username" autofocus="autofocus" required="required">
+        <img src="/img/lock-ico.png" class="lock-ico" alt="">
+        <input placeholder="密码" id="input-password" name="password" type="password">
+    </div>
+    <div class="bottom-btn">
+        <span>不想注册了？</span>
+        <a href="javascript:history.back();">返回</a>
+        <button id="btn-submit">提交</button>
+    </div>
+</div>
+<script>
+    var get_username = document.getElementById('input-username');
+    var get_password = document.getElementById('input-password');
+    var btn_submit = document.getElementById('btn-submit');
+    get_password.onkeydown = function(event) {
+        var event = event || window.event;
+        if (event.keyCode === 13) {
+            send_message()
+        }
+    }
+    btn_submit.onclick = function() {
+        send_message()
+    }
+    function send_message() {
+        ajax({
+            url: '/admin/admin_user/add_user',
+            type: 'post',
+            data: {
+                'username': get_username.value.trim(),
+                'password': get_password.value.trim()
+            },
+            success: function(str) {
+                let the_str = JSON.parse(str);
+                if (the_str.ok) {
+                    window.location.href = document.referrer;
+                } else {
+                    alert('添加失败：'+the_str.message);
+                }
+            },
+            error: function() {
+                alert('通信失败')
+            }
+        })
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>home</title>
+    <link rel="stylesheet" href="css/clear_style.css">
+    <link rel="stylesheet" href="css/index_article_style.css">
+    <link rel="stylesheet" href="css/article.css">
+</head>
+<body>
+<div class="banner">
+    <div class="logo">
+        <img src="img/logo.png" alt="图床失效">
+    </div>
+    <ul class="banner-item">
+        <a href="#"><li>博客首页</li></a>
+        <a href="#"><li>博客文章</li></a>
+        <a href="https://github.com/SURA907/node_blog"><li>GitHub</li></a>
+        <a href="#"><li>关于SURA</li></a>
+    </ul>
+    <!--<% if(!user_status) { %>-->
+    <!--<div class="login-status"><a href="/admin">点击</a>登陆</div>-->
+    <!--<% } else { %>-->
+    <!--<div class="login-status">-->
+        <!--<img src="img/user-avatar.png" class="user-avatar" alt="">-->
+        <!--<div>-->
+            <!--<%= user_status.username %>-->
+        <!--</div>-->
+        <!--<a href="/admin/logout" id="btn-logout">登出</a>-->
+    <!--</div>-->
+    <!--<% }%>-->
+</div>
+<div class="content">
+    <div class="article-content">
+        <h1 class="article-title">关于BandwagonHost（搬瓦工）的购买和退款</h1>
+        <div class="article-status">
+            <span class="upload-time"><img src="img/upload-time.png" alt="">2018-12-21</span>
+            <span class="author"><img src="img/author.png" alt="">SURA</span>
+            <span class="theme"><img src="img/theme.png" alt="">无主题</span>
+        </div>
+        <hr>
+        <div class="article-body"><p>首先，在决定购买VPS之前要明白VPS是什么，有哪些用途。</p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p>一、VPS的概念和用途</p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p>一.1、VPS简述</p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p>  虚拟专用服务器（英语：Virtual private server，缩写为 VPS），是将一台服务器分区成多个虚拟专享服务器的服务。实现VPS的技术分为容器技术和虚拟化技术 。在容器或虚拟机中，每个VPS都可分配独立公网IP地址、独立操作系统、实现不同VPS间磁盘空间、内存、CPU资源、进程和系统配置的隔离，为用户和应用程序模拟出”独占”使用计算资源的体验。VPS可以像独立服务器一样，重装操作系统，安装程序，单独重启服务器。VPS为用户提供了管理配置的自由，可用于企业虚拟化，也可以用于IDC资源租用。 IDC资源租用，由VPS提供商提供。不同VPS提供商所使用的硬件VPS软件的差异，及销售策略的不同，VPS的使用体验也有较大差异。尤其是VPS提供商超卖，导致实体服务器超负荷时，VPS性能将受到极大影响。相对来说，容器技术比虚拟机技术硬件使用效率更高，更易于超卖，所以一般来说容器VPS的价格都高于虚拟机VPS的价格。 这些VPS主机以最大化的效率共享硬件、软件许可证以及管理资源。每个VPS主机都可分配独立公网IP地址、独立操作系统、独立超大空间、独立内存、独立CPU资源、独立执行程序和独立系统配置等. VPS主机用户除了可以分配多个虚拟主机及无限企业邮箱外， 更具有独立主机功能, 可自行安装程序，单独重启主机。(以上摘自维基百科)</p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p>  这样直接看起来可能会比较抽象，SURA现在对VPS的理解为：可以远程连接的，可以升级或降级配置的（部分厂商好像不能，不过应该很少见），能够长时间不间断开机的服务器。</p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p>一.2、VPS的配置信息</p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p>  正如同买家用电脑的时候要注重电脑配置一样，VPS在购买时也是需要注意配置的。</p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p>    通常VPS的配置通常包含以下几个方面：</p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p>CPU（中央处理器）</p>
+            <p></p>
+            <p>RAM（通常说的运行内存，VPS的通常是ECC内存）</p>
+            <p></p>
+            <p>流量（海外VPS厂商是按流量的多少来计费且带宽固定，而国内VPS厂商通常按照带宽来计费）</p>
+            <p></p>
+            <p>硬盘（主要是硬盘大小和类型，SSD和HDD在速度上有天壤之别）</p>
+            <p></p>
+            <p>一.3、VPS的用途</p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p>  在了解VPS是什么和VPS的配置信息之后，就需要知道VPS有哪些用途。</p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p>    SURA所知的VPS用途：</p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p>海外的VPS可以搭建SS/SSR，魔法上网的不错选择，只是海外廉价VPS通常在国内的访问延迟在200-400毫秒之间，网速虽然快，但不适合用来打游戏，看个视频什么的还是很不错的。</p>
+            <p></p>
+            <p>SURA最早掏腰包买VPS的初衷就是搭建SS来魔法上网，但搭建完SS或者SSR的时候，服务器资源实际上没有使用多少，让VPS闲着也确实有些浪费，于是摸索建站又是一种用途。</p>
+            <p></p>
+            <p>VPS的用途实际上是由很多的，目前SURA只接触到了上述两种，</p>
+            <p></p>
+            <p>二、VPS的选购</p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p>二.1、VPS的选择</p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p>  SURA是一名学生狗，在选购VPS的时候，注重的是VPS的稳定性，价格和VPS厂商的信誉。</p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p>  首先，买VPS是为了使用，VPS如果稳定性差，天天宕机，那掏钱买回来的就是一大爷；其次，在VPS稳定性不差的基础上，SURA注重的是价格，至于原因嘛······/(ㄒoㄒ)/~~；最后，VPS厂商的信誉也很重要，毕竟谁也不想遇到刚买个VPS，然后厂商卷铺盖跑路了的事情吧(╯‵□′)╯︵┻━┻。</p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p>  如上文所说，SURA购买VPS的初衷是搭建SS来魔法上网，因此国内的VPS厂商直接pass（PS：国内VPS厂商的服务器宽带是按带宽来计费的，跟大部分家用宽带计费方式一样，100+的一般是1m或者2m宽带······），而国外的VPS厂商主要有：Bandwagon、Linode 以及 Vultr（SURA才疏学浅，只知道这几个······）。</p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p>  SURA没有办法（因囊中羞涩）去测试以上三个厂商的VPS质量，通常网上其他dalao的评价为：Bandwagon价钱便宜且速度更快方便使用，Linode价格高但更稳定、Vultr非常便宜但国内速度太慢了。</p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p>  最终SURA选择了Bandwagon（搬瓦工）的VPS，让SURA做出决定的是Bandwagon支持支付宝付款，对，就是那个可以扫码支付的支付宝，就近一个月的运行状看来看，Bandwagon还是很不错的，没有出现宕机，安装锐速和SS之后，魔法上网的网络延迟在200-300毫秒之间，网速能跑满SURA家用的50m联通水管，整体表现还是令SURA很满意的。</p>
+            <p></p>
+            <p></p>
+            <p></p>
+        </div>
+    </div>
+    <div class="comment-content">
+        <h2>评论区</h2>
+        <ul class="comment-body">
+            <li class="comment-items">
+                <img src="img/user-avatar.png" alt="" class="avatar">
+                <span class="username">SURA说道：</span>
+                <span class="comment-upload-time">2018-10-21</span>
+                <p>测试，测试，评论测试，测试，测试，评论测试，测试，测试，评论测试，</p>
+            </li>
+            <hr>
+            <li class="comment-items">
+                <img src="img/user-avatar.png" alt="" class="avatar">
+                <span class="username">SURA说道：</span>
+                <span class="comment-upload-time">2018-10-21</span>
+                <p>测试，测试，评论测试，测试，测试，评论测试，测试，测试，评论测试，</p>
+            </li>
+            <hr>
+        </ul>
+        <div class="input-comment">
+            <!--<span><a href="#">登录</a>后才能发表评论</span>-->
+            <span>已登入<span class="comment-user">SURA</span></span>
+            <textarea id="get-comment"></textarea>
+            <button id="btn-submit">提交</button>
+        </div>
+    </div>
+</div>
+<div class="fix-float"></div>
+</body>
+</html>

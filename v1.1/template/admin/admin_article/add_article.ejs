@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>add_article</title>
+    <link rel="stylesheet" href="/css/clear_style.css">
+    <link rel="stylesheet" href="/css/index_article_style.css">
+    <link rel="stylesheet" href="/css/add_update_article.css">
+    <script src="/js/ajax.js"></script>
+    <script src="/js/logout.js"></script>
+</head>
+<body>
+<% include ../../public_banner.ejs %>
+<div class="content">
+    <div class="add-article-content">
+        <input type="text" id="article-title" placeholder="请输入标题">
+        <textarea id="article-body" placeholder="请输入文章内容（markdown）"></textarea>
+        <div class="submit-home">
+            <div class="theme">
+                <div>主题</div>
+                <div class="radio-items">测试中···</div>
+                <div class="radio-items">即将上线</div>
+            </div>
+            <button id="btn-submit">提交</button>
+        </div>
+    </div>
+</div>
+<script>
+    var article_title = document.getElementById('article-title');
+    var article_body = document.getElementById('article-body');
+    var btn_submit = document.getElementById('btn-submit');
+    btn_submit.onclick = function () {
+        if (article_title.value.trim() === '' || article_body.value.trim() === '') {
+            alert('文章标题或正文不能为空');
+        } else {
+            ajax({
+                url: '/admin/admin_article/add_article',
+                type: 'post',
+                data: {
+                    'article_title': article_title.value.trim(),
+                    'article_body': article_body.value.trim()
+                },
+                success: function (str) {
+                    let the_str = JSON.parse(str);
+                    if (the_str.ok) {
+                        window.location.href = document.referrer;
+                    } else {
+                        alert('上传失败：'+the_str.message);
+                    }
+                },
+                error: function () {
+                    alert('通信失败');
+                }
+            })
+        }
+    }
+</script>
+</body>
+</html>

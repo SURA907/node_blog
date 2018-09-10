@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>admin_home</title>
+    <link rel="stylesheet" href="css/clear_style.css">
+    <link rel="stylesheet" href="css/index_article_style.css">
+    <link rel="stylesheet" href="css/admin_page.css">
+</head>
+<body>
+<div class="banner">
+    <div class="logo">
+        <img src="img/logo.png" alt="图床失效">
+    </div>
+    <ul class="banner-item">
+        <a href="#"><li>博客首页</li></a>
+        <a href="#"><li>博客文章</li></a>
+        <a href="https://github.com/SURA907/node_blog"><li>GitHub</li></a>
+        <a href="/admin/admin_home"><li>管理站点</li></a>
+    </ul>
+</div>
+
+<!--<% include ../public_banner.ejs %>-->
+<div class="content">
+    <div class="btn-home">
+        <ul>
+            <li class="items-title">操作-admin</li>
+            <li class="admin-content">
+                <span>--add</span>
+                <a href="#">添加文章</a>
+                <a href="#">添加用户</a>
+            </li>
+            <hr>
+        </ul>
+    </div>
+    <div class="admin-items">
+        <ul>
+            <li class="items-title">文章管理-admin</li>
+            <li class="admin-content">
+                <div class="article-title-home">
+                    <span class="serial">#1</span>
+                    <span class="article-title">关于搬瓦工的购买和退款</span>
+                </div>
+                <div class="article-message">
+                    <img src="img/author.png" alt="">
+                    <span class="author">SURA</span>
+                    <img src="img/upload-time.png" alt="">
+                    <span class="upload-time">2018-12-21 16:12:32</span>
+                </div>
+                <div class="operating">
+                    <a href="#"><img src="img/edit_ico.png" >编辑</a>
+                    <a href="#"><img src="img/delete_ico.png" >删除</a>
+                </div>
+            </li>
+            <hr>
+        </ul>
+    </div>
+    <ul class="admin-items">
+        <li class="items-title">用户管理-admin</li>
+        <li class="admin-content">
+            <div class="article-title-home">
+                <span class="serial">#1</span>
+                <span class="article-title">SURA</span>
+            </div>
+            <div class="operating">
+                <a href="#"><img src="img/edit_ico.png" >编辑</a>
+                <a href="#"><img src="img/delete_ico.png" >删除</a>
+            </div>
+        </li>
+        <hr>
+        <hr>
+    </ul>
+</div>
+<div class="fix-float"></div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>add_article</title>
+    <link rel="stylesheet" href="css/clear_style.css">
+    <link rel="stylesheet" href="css/index_article_style.css">
+    <link rel="stylesheet" href="css/add_update_article.css">
+    <script src="js/ajax.js"></script>
+</head>
+<body>
+<!--<% include ../public_banner.ejs %>-->
+
+<div class="banner">
+    <div class="logo">
+        <img src="img/logo.png" alt="图床失效">
+    </div>
+    <ul class="banner-item">
+        <a href="#"><li>博客首页</li></a>
+        <a href="#"><li>博客文章</li></a>
+        <a href="https://github.com/SURA907/node_blog"><li>GitHub</li></a>
+        <a href="/admin/admin_home"><li>管理站点</li></a>
+    </ul>
+</div>
+
+<div class="content">
+    <div class="add-article-content">
+        <input type="text" id="article-title" placeholder="请输入标题">
+        <textarea id="article-body" placeholder="请输入文章内容"></textarea>
+        <div class="submit-home">
+            <div class="theme">
+                <div>主题</div>
+                <div class="radio-items">测试中···</div>
+                <div class="radio-items">即将上线</div>
+            </div>
+            <button id="btn-submit">提交</button>
+        </div>
+    </div>
+</div>
+<script>
+    var article_title = document.getElementById('article-title');
+    var article_body = document.getElementById('article-body');
+    var btn_submit = document.getElementById('btn-submit');
+    btn_submit.onclick = function () {
+        if (article_title.value.trim() === '' || article_body.value.trim() === '') {
+            alert('文章标题或正文不能为空');
+        } else {
+            ajax({
+                url: '/admin/admin_article/add_article',
+                type: 'post',
+                data: {
+                    'article_title': article_title.value.trim(),
+                    'article_body': article_body.value.trim(),
+                    'upload_time': Date()
+                },
+                success: function (str) {
+                    let the_str = JSON.parse(str);
+                    if (the_str.ok) {
+                        history.back();
+                        location.reload();
+                    } else {
+                        alert('上传失败：'+the_str.message);
+                    }
+                },
+                error: function () {
+                    alert('通信失败');
+                }
+            })
+        }
+    }
+</script>
+</body>
+</html>

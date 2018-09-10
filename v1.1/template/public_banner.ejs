@@ -1,0 +1,22 @@
+<div class="banner">
+    <div class="logo">
+        <img src="/img/logo.png" alt="图床失效">
+    </div>
+    <ul class="banner-item">
+        <a href="/"><li>博客首页</li></a>
+        <a href="/#article-content"><li>博客文章</li></a>
+        <a href="https://github.com/SURA907/node_blog"><li>GitHub</li></a>
+        <a href="/admin/admin_home"><li>管理站点</li></a>
+    </ul>
+    <% if(!user_status) { %>
+    <div class="login-status"><a href="/admin/login">点击</a>登陆</div>
+    <% } else { %>
+    <div class="login-status">
+    <img src="/img/user-avatar.png" class="user-avatar" alt="">
+    <div>
+    <%= user_status.username %>
+    </div>
+    <a href="#" id="btn-logout">登出</a>
+    </div>
+    <% }%>
+</div>

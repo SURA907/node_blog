@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>home</title>
+    <link rel="stylesheet" href="/css/clear_style.css">
+    <link rel="stylesheet" href="/css/index_article_style.css">
+    <link rel="stylesheet" href="/css/article.css">
+    <link rel="stylesheet" href="/css/markdown.css">
+    <script src="/js/ajax.js"></script>
+    <script src="/js/logout.js"></script>
+</head>
+<body>
+<% include ../public_banner.ejs %>
+<div class="content">
+    <div class="article-content">
+        <h1 class="article-title"><%= article_data[0].article_title %></h1>
+        <div class="article-status">
+            <span class="upload-time"><img src="/img/upload-time.png" alt=""><%= article_data[0].upload_time %></span>
+            <span class="author"><img src="/img/author.png" alt=""><%= article_data[0].author %></span>
+            <span class="theme"><img src="/img/theme.png" alt="">无主题</span>
+        </div>
+        <hr>
+        <div class="article-body markdown-body"><%- article_data[0].article_body %></div>
+    </div>
+    <div class="comment-content">
+        <h2>留言区</h2>
+        <div class="input-comment">
+            <% if (user_status) { %>
+                <span>已登入<span class="comment-user"><%= user_status.username %></span></span>
+                <textarea id="get-comment" placeholder="请输入评论内容"></textarea>
+                <button id="btn-submit">提交</button>
+                <input type="hidden" id="get-article-id" value="<%= article_data[0].article_id %>">
+            <% } else { %>
+                <span><a href="/admin/login">登录</a>后才能留言</span>
+            <% } %>
+        </div>
+        <ul class="comment-body">
+            <% for(var n=0; n<comment_data.length; n++) { %>
+            <li class="comment-items">
+                <img src="/img/user-avatar.png" alt="" class="avatar">
+                <div class="username"><%= comment_data[n].username %><span>说道：</span></div>
+                <span class="comment-upload-time"><%= comment_data[n].upload_time %></span>
+                <p><%= comment_data[n].comment_body %></p>
+            </li>
+            <hr>
+            <% } %>
+        </ul>
+    </div>
+</div>
+<div class="fix-float"></div>
+<script>
+    var get_comment = document.getElementById('get-comment')
+    var btn_submit = document.getElementById('btn-submit')
+    var get_article_id = document.getElementById('get-article-id')
+    if (btn_submit !== null) {
+        btn_submit.onclick = function() {
+            if (get_comment.value.trim() === '') {
+                alert('提交内容不能为空！')
+            } else {
+                ajax({
+                    url: 'article/set_comment',
+                    type: 'post',
+                    data: {
+                        'type': 'upload_comment',
+                        'comment_data': get_comment.value,
+                        'article_id': get_article_id.value
+                    },
+                    success: function(str) {
+                        let the_str = JSON.parse(str)
+                        if (the_str.ok) {
+                            location.reload()
+                        } else {
+                            alert('err: '+the_str.message)
+                        }
+                    },
+                    error: function() {
+                        alert('通信失败')
+                    }
+                })
+            }
+        }
+    }
+</script>
+</body>
+</html>
