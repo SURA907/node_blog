@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>the article</title>
+    <link rel="stylesheet" href="/css/clearStyle.css">
+    <link rel="stylesheet" href="/css/add_update_article.css">
+    <script>
+        window.onload = function () {
+            const btn_go_back = document.getElementById('go-back');
+            btn_go_back.onclick = function () {
+                window.location.href = '/admin/admin_article';
+                event.preventDefault();
+            };
+        };
+    </script>
+</head>
+<body>
+
+<img src="/images/add_article_title_img.png" class="add-article-title-img" alt="">
+
+<div class="content">
+    <form action="/admin/admin_article/insert_article" class="input" method="post">
+
+        <div class="article-title-box">
+            标题 <input type="text" name="article_title" autocomplete="off" class="article-title">
+        </div>
+
+        <textarea name="article_body" class="article-body"></textarea>
+
+        <button class="btn-go-back" id="go-back">取消</button>
+        <input type="submit" class="btn-submit">
+
+    </form>
+</div>
+
+</body>
+</html>

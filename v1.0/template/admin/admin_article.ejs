@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>admin_article</title>
+    <link rel="stylesheet" href="/css/clearStyle.css">
+    <link rel="stylesheet" href="/css/admin_homepage_style.css">
+    <link rel="stylesheet" href="/css/admin_article_page.css">
+    <script>
+        window.onload = function () {
+            var btn_delete = document.getElementsByClassName('btn_delete');
+            for (var i = 0;i < btn_delete.length;i++) {
+                btn_delete[i].onclick = function () {
+                    if (confirm('确认删除文章？')) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+
+<% include components/admin_public.ejs%>
+
+
+<div class="admin-body">
+    <table class="article_massage">
+        <thead>
+            <tr>
+                <td>序号</td>
+                <td>文章id</td>
+                <td>标题</td>
+                <td>作者</td>
+                <td>发布日期</td>
+                <td>操作</td>
+            </tr>
+        </thead>
+        <tbody>
+        <%if (user_status[0].is_admin === 'YES') {%>
+        <!--管理员可以查看、修改、删除所有人的文章-->
+            <%for(var n = 0;n < admin_article_massage.length;n++) {%>
+                <tr>
+                    <td><%=n+1%></td>
+                    <td><%=admin_article_massage[n].article_id%></td>
+                    <%if (admin_article_massage[n].article_title.length > 29) {%>
+                    <td><%=admin_article_massage[n].article_title.substring(0,29)+'...'%></td>
+                    <%} else {%>
+                    <td><%=admin_article_massage[n].article_title%></td>
+                    <%}%>
+
+                    <td><%=admin_article_massage[n].author%></td>
+                    <td><%=admin_article_massage[n].upload_time%></td>
+                    <td>
+                        <a href="/admin/admin_article/update_article?article_id=<%=admin_article_massage[n].article_id%>">修改</a>
+                        <a href="/admin/admin_article/delete_article?article_id=<%=admin_article_massage[n].article_id%>" class="btn_delete">删除</a>
+                    </td>
+
+                </tr>
+            <% } %>
+        <% } else {%>
+        <!--非管理员只能查看、修改、删除自己的文章-->
+        <h2>非管理员只能查看、修改、删除自己的文章</h2>
+            <%for(var n = 0;n < article_massage.length;n++) {%>
+                <tr>
+                    <td><%=n+1%></td>
+                    <td><%=article_massage[n].article_id%></td>
+                    <%if (article_massage[n].article_title.length > 29) {%>
+                    <td><%=article_massage[n].article_title.substring(0,29)+'...'%></td>
+                    <%} else {%>
+                    <td><%=article_massage[n].article_title%></td>
+                    <%}%>
+
+                    <td><%=article_massage[n].author%></td>
+                    <td><%=article_massage[n].upload_time%></td>
+                    <td>
+                        <a href="/admin/admin_article/update_article?article_id=<%=article_massage[n].article_id%>">修改</a>
+                        <a href="/admin/admin_article/delete_article?article_id=<%=article_massage[n].article_id%>" class="btn_delete">删除</a>
+                    </td>
+
+                </tr>
+            <% } %>
+        <% } %>
+
+        </tbody>
+    </table>
+
+    <div class="add_article">
+        <a href="/admin/admin_article/add_article">添加文章</a>
+    </div>
+
+</div>
+
+</body>
+</html>

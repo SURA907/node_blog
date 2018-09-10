@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+    <link rel="stylesheet" href="/css/clearStyle.css">
+    <link rel="stylesheet" href="/css/login_registered_page_style.css">
+    <script src="/js/ajax.js"></script>
+    <script>
+        window.onload = function () {
+            const btn_login = document.getElementById("btn_login");
+            var username = document.getElementById("username");
+            var password = document.getElementById("password");
+            var btn_go_back = document.getElementById("btn_go_back");
+            username.focus();
+
+            btn_go_back.onclick = function() {
+                window.history.back();
+            }
+
+            //提交数据
+            btn_login.onclick = function () {
+                if (username.value === '' || password.value === '') {
+                    alert('用户名和密码不能为空');
+                } else {
+                    ajax({
+                        url:'/admin/login',
+                        data:{type:'login',username:username.value,password:password.value},
+                        type:'post',
+                        success:function (str) {
+                            var json = eval('('+str+')');
+                            if (json.ok) {
+                                window.location.href = document.referrer;
+                            } else {
+                                alert('登陆失败：'+json.massage);
+                            }
+                        },
+                        error:function () {
+                            alert('通信失败');
+                        }
+                    })
+                }
+            };
+        };
+    </script>
+</head>
+<body>
+    <div class="logo_img">
+        <img src="/images/logo_login.png" alt="">
+    </div>
+
+    <div id="login_bkg">
+
+        <div class="input">
+            用户名:</br>
+            <input id="username" type="text" size="20">
+        </div>
+
+        <div class="input">
+            密码:</br>
+            <input id="password" type="password" size="20">
+        </div>
+
+        <div class="btn_home">
+            <div  class="go-back-home">
+                不想登陆了？<a href="#" id="btn_go_back">返回</a>
+            </div>
+            <input id="btn_login" class="btn" type="button" value="登陆">
+        </div>
+    </div>
+</body>
+</html>
