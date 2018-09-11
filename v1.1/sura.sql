@@ -11,7 +11,7 @@
  Target Server Version : 50560
  File Encoding         : 65001
 
- Date: 08/09/2018 11:16:15
+ Date: 11/09/2018 22:16:19
 */
 
 SET NAMES utf8mb4;
@@ -30,7 +30,7 @@ CREATE TABLE `article_table`  (
   PRIMARY KEY (`article_id`) USING BTREE,
   INDEX `author_fk`(`author`) USING BTREE,
   CONSTRAINT `article_table_ibfk_1` FOREIGN KEY (`author`) REFERENCES `user_table` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 51 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 56 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of article_table
@@ -43,6 +43,9 @@ INSERT INTO `article_table` VALUES (39, 2, '2018-06-11 00:00:00', '在搬瓦工V
 INSERT INTO `article_table` VALUES (46, 2, '2018-09-07 11:07:03', '文章标题测试', 'hello, world');
 INSERT INTO `article_table` VALUES (47, 2, '2018-09-07 12:52:52', 'hello,world', '你好，世界\n修改测试');
 INSERT INTO `article_table` VALUES (50, 15, '2018-09-07 23:12:13', 'k907标题测试', 'k907文本测试\n文章修改测试');
+INSERT INTO `article_table` VALUES (53, 11, '2018-09-09 22:25:59', 'markdown-test', '# node_blog\n\n一个使用node，基于express框架，使用ejs引擎的小型博客站程序\n\n## 零、更新日志\n\n### 2018-06-11\n修复了首页的作者与其他信息不匹配的问题\n\n### 2018-06-01\n增加了评论功能<br>\n数据库表结构也相应的改变\n\n## 一、路由列表\n![image](https://github.com/SURA907/node_blog/raw/master/v1.0/router_list.png)<br>\n## 二、文件目录\n![image](https://github.com/SURA907/node_blog/raw/master/v1.0/file_tree.png)<br>\n## 三、部署运行\n 切换到程序根目录');
+INSERT INTO `article_table` VALUES (54, 2, '2018-09-09 23:05:55', 'SURA-markdown测试', '## 笔记\n- ### git init\n > 将当前目录初始化为git工作区</br>\n > 会在当前目录生成.git文件夹, 切勿修改此文件夹的内容\n\n- ### git add <文件名>\n > 将工作区文件修改添加至暂存区</br>\n > 可以连续执行多次add\n\n- ### git commit -m <本次提交的描述>\n > 将暂存区的所有内容保存至本地仓库\n\n- ### git status\n > 显示有变更的文件\n\n- ### git log\n > commit日志\n\n- ### git reflog\n > 版本变更日志\n\n- ### git remot add <仓库别名> <远程仓库地址>\n > 绑定远程仓库\n\n- ### git push <仓库> <分支>\n > 将本地仓库推送到远程仓库\n\n- ### git clone <远程仓库地址>\n > 将指定远程仓库克隆到本地');
+INSERT INTO `article_table` VALUES (55, 2, '2018-09-11 02:23:56', 'GitHub文件-README', '* # node_blog\n > 一个使用node，选用express mysql ejs的简易博客站点程序\n---\n## 0. 概述\n > 几个月时间，SURA深刻认识到自己当前所学的不足</br>\n > 由于自己年轻不懂事，之前的版本存在许多早期设计上的缺陷，故弃用（弃用项目文件放入v1.0）\n---\n## 1. 新版本的主要变化\n > (1)、重新设计了前端界面，SURA希望借此获得更良好的交互体验</br>\n > (2)、对路由模块进行了进一步抽象，尽可能规范api的使用</br>\n > (3)、对数据库交互部分与主程序进行了一定程度的分离，同时将数据库配置部分从主程序抽离出来</br>\n > (4)、对权限检验部分就行了一定程度的封装，提高泛用性</br>\n > (5)、添加markdown解析支持，告别纯文本输入</br>\n > (6)、由于远程数据库位置经常变更，故不再提供私人远程数据库连接\n---\n## 2. 目录结构\n > ![image](https://github.com/SURA907/node_blog/raw/master/readme_img/v1.1/file_list.png)\n---\n## 3. 路由列表\n > ![image](https://github.com/SURA907/node_blog/raw/master/readme_img/v1.1/route_list.png)\n---\n## 4. 访问demo\n > SURA将简易博客站点部署在http://sura.wang</br>\n > 部署时间（更新：2018-09-11）</br>\n > 由于这是SURA的个人服务器，不保证长期部署此项目</br>\n > ##### - 测试用账号\n >> 序号 | 账号    |密码     |管理员\n >> :--: | :-----: | :-----: | :----:\n >> 1    | SURA    | asdf    | 是\n >> 2    | ASURA   | asura   | 否\n >> 3    | SURA907 | sura907 | 否\n > ##### 请勿在demo站点删除以上账号\n---\n## 5. 部署运行\n > (1)、将仓库下载或克隆到本地</br>\n > (2)、使用v1.1/sura.sql还原mysql表结构</br>\n > (3)、修改v1.1/config.js中的数据库配置</br>\n > (4)、切换到根目录：cd v1.1/</br>\n > (5)、下载依赖：npm install</br>\n > (6)、运行程序：node server.js</br>\n > (7)、打开浏览器，输入http://localhost:8080 查看运行结果</br>\n > (8)、端口监听可在server.js中修改\n---\n## 6. PS\n > 关于mysql的安装和配置不过多赘述</br>\n > 完工，合掌\n---');
 
 -- ----------------------------
 -- Table structure for comment_table
@@ -59,7 +62,7 @@ CREATE TABLE `comment_table`  (
   INDEX `fk_comment_article_id_TO_article_table_article_id`(`comment_article_id`) USING BTREE,
   CONSTRAINT `fk_comment_article_id_TO_article_table_article_id` FOREIGN KEY (`comment_article_id`) REFERENCES `article_table` (`article_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_comment_user_id_TO_user_table_user_id` FOREIGN KEY (`comment_user_id`) REFERENCES `user_table` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 56 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 65 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of comment_table
@@ -70,18 +73,15 @@ INSERT INTO `comment_table` VALUES (19, 3, 38, '测试文本测试文本测试�
 INSERT INTO `comment_table` VALUES (21, 11, 39, '评论测试', '2018-06-11 07:29:47');
 INSERT INTO `comment_table` VALUES (22, 11, 27, '评论测试', '2018-06-11 07:30:28');
 INSERT INTO `comment_table` VALUES (23, 11, 35, '评论测试', '2018-06-11 07:30:41');
-INSERT INTO `comment_table` VALUES (39, 2, 39, '评论测试', '2018-08-27 03:54:54');
-INSERT INTO `comment_table` VALUES (40, 2, 39, '时间校正', '2018-08-27 05:15:04');
-INSERT INTO `comment_table` VALUES (41, 2, 38, '评论测试', '2018-08-27 18:46:10');
 INSERT INTO `comment_table` VALUES (42, 11, 3, '评论测试', '2018-08-29 01:20:48');
 INSERT INTO `comment_table` VALUES (43, 3, 3, '评论测试', '2018-08-29 01:23:44');
-INSERT INTO `comment_table` VALUES (44, 2, 39, '测试', '2018-09-05 04:24:19');
-INSERT INTO `comment_table` VALUES (45, 2, 39, '', '2018-09-06 06:22:34');
-INSERT INTO `comment_table` VALUES (46, 2, 39, ' ', '2018-09-06 06:26:35');
-INSERT INTO `comment_table` VALUES (47, 2, 39, '测试', '2018-09-07 00:01:51');
-INSERT INTO `comment_table` VALUES (49, 2, 39, '评论测试', '2018-09-07 09:47:49');
-INSERT INTO `comment_table` VALUES (52, 2, 46, '评论测试', '2018-09-07 11:07:25');
-INSERT INTO `comment_table` VALUES (53, 2, 39, 'hello, world', '2018-09-07 12:52:29');
+INSERT INTO `comment_table` VALUES (57, 2, 39, '评论测试', '2018-09-08 08:45:09');
+INSERT INTO `comment_table` VALUES (58, 2, 50, '评论测试', '2018-09-08 08:45:34');
+INSERT INTO `comment_table` VALUES (59, 11, 50, '评论测试', '2018-09-08 08:48:56');
+INSERT INTO `comment_table` VALUES (61, 11, 47, '评论测试', '2018-09-08 08:59:20');
+INSERT INTO `comment_table` VALUES (62, 11, 53, 'markdown测试', '2018-09-09 23:03:16');
+INSERT INTO `comment_table` VALUES (63, 2, 54, '评论测试', '2018-09-10 05:26:28');
+INSERT INTO `comment_table` VALUES (64, 11, 55, '评论测试', '2018-09-11 09:41:15');
 
 -- ----------------------------
 -- Table structure for user_table
@@ -99,7 +99,7 @@ CREATE TABLE `user_table`  (
 -- ----------------------------
 -- Records of user_table
 -- ----------------------------
-INSERT INTO `user_table` VALUES (1, '牛世杰', 'ASdf', 'NO');
+INSERT INTO `user_table` VALUES (1, '牛世杰', '62127294ad444a250d7cb71439205cd0cbafe8fc0f4f5b933502c7846afb303e', 'NO');
 INSERT INTO `user_table` VALUES (2, 'SURA', '2e6d9ba9a3390b741a5ec69432740126f05af8b94202e4953a260e3f47f79f4e', 'YES');
 INSERT INTO `user_table` VALUES (3, 'ASURA', '30493b6461fe50fc18a1d9df56b527e0dd92340442d297102ea8ea9019535404', 'NO');
 INSERT INTO `user_table` VALUES (7, 'K8806', 'dd9089399a409c8bc584f35022af818af0b95451f80e9ab2c4424d1d1d44d304', 'NO');
