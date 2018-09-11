@@ -38,7 +38,7 @@
  > (4)、切换到根目录：cd v1.1/</br>
  > (5)、下载依赖：npm install</br>
  > (6)、运行程序：node server.js</br>
- > (7)、打开浏览器，输入http://localhost:8080，查看运行结果</br>
+ > (7)、打开浏览器，输入http://localhost:8080 查看运行结果</br>
  > (8)、端口监听可在server.js中修改
 ---
 ## 6. PS
