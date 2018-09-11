@@ -15,12 +15,15 @@
 ---
 ## 2. 目录结构
  > ![image](https://github.com/SURA907/node_blog/raw/master/readme_img/v1.1/file_list.png)
+---
 ## 3. 路由列表
  > ![image](https://github.com/SURA907/node_blog/raw/master/readme_img/v1.1/route_list.png)
+---
 ## 4. 访问demo
  > SURA将简易博客站点部署在http://sura.wang</br>
  > 部署时间（更新：2018-09-11）</br>
  > 由于这是SURA的个人服务器，不保证长期部署此项目
+---
 ## 5. 部署运行
  > (1)、将仓库下载或克隆到本地</br>
  > (2)、使用v1.1/sura.sql还原mysql表结构</br>
@@ -30,6 +33,8 @@
  > (6)、运行程序：node server.js</br>
  > (7)、打开浏览器，输入http://localhost:8080，查看运行结果</br>
  > (8)、端口监听可在server.js中修改
+---
 ## 6. PS
  > 关于mysql的安装和配置不过多赘述</br>
  > 完工，合掌
+---
