@@ -15,9 +15,6 @@ module.exports = {
     myMarked: function() {
         marked.setOptions({
             renderer: marked.Renderer(),
-            highlight: function(code) {
-                return require('highlight.js').highlightAuto(code).value
-            },
             pedantic: false,
             gfm: true,
             tables: true,
