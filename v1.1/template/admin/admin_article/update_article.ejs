@@ -38,8 +38,8 @@
                 type: 'post',
                 data: {
                     'article_id': '<%= article_data[0].article_id%>',
-                    'article_title': article_title.value.trim(),
-                    'article_body': article_body.value.trim()
+                    'article_title': encodeURIComponent(article_title.value.trim()),
+                    'article_body': encodeURIComponent(article_body.value.trim())
                 },
                 success: function (str) {
                     let the_str = JSON.parse(str);
