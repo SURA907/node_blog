@@ -5,7 +5,8 @@
 * [初始化sqlite数据库](#初始化sqlite数据库)
 * [启动命令](#启动命令)
 * [问题FAQ](#faq)
-
+* [问题FAQ](#FAQ)
+* [问题FAQ](#Faq)
 #### 部署启动
 
 #### 需要的配置文件
@@ -104,3 +105,6 @@ RAILS_ENV=production bundle exec unicorn -E production -c config/unicorn.rb -D
 GitHub (https://github.com/sparklemotion/nokogiri/issues/1801)
 Nokogiri 1.8.4 installation challenges on macOS Mojave · Issue #1801 · sparklemotion/nokogiri
 If you're having trouble installing Nokogiri ... Have you tried following [the installation tutorial][tutorial]? yes Wh
+
+
+#### Faq
